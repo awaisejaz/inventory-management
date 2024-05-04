@@ -129,8 +129,8 @@ class OrderController extends Controller
         }
         $order->update([
             'order_status' => OrderStatus::COMPLETE,
-            'due' => '0',
-            'pay' => $order->total
+            // 'due' => '0',
+            // 'pay' => $order->total
         ]);
 
         return redirect()

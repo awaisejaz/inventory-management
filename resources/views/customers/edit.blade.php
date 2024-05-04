@@ -76,20 +76,20 @@
                                             <select class="form-select @error('bank_name') is-invalid @enderror"
                                                 id="bank_name" name="bank_name">
                                                 <option selected="" disabled>Select a bank:</option>
-                                                <option value="BRI"
-                                                    @if (old('bank_name', $customer->bank_name) == 'BRI') selected="selected" @endif>BRI
+                                                <option value="MCB"
+                                                    @if (old('bank_name', $customer->bank_name) == 'MCB') selected="selected" @endif>MCB
                                                 </option>
-                                                <option value="BNI"
-                                                    @if (old('bank_name', $customer->bank_name) == 'BNI') selected="selected" @endif>BNI
+                                                <option value="UBL"
+                                                    @if (old('bank_name', $customer->bank_name) == 'UBL') selected="selected" @endif>UBL
                                                 </option>
-                                                <option value="BCA"
-                                                    @if (old('bank_name', $customer->bank_name) == 'BCA') selected="selected" @endif>BCA
+                                                <option value="BOP"
+                                                    @if (old('bank_name', $customer->bank_name) == 'BOP') selected="selected" @endif>BOP
                                                 </option>
-                                                <option value="BSI"
-                                                    @if (old('bank_name', $customer->bank_name) == 'BSI') selected="selected" @endif>BSI
+                                                <option value="NBL"
+                                                    @if (old('bank_name', $customer->bank_name) == 'NBL') selected="selected" @endif>NBL
                                                 </option>
-                                                <option value="Mandiri"
-                                                    @if (old('bank_name', $customer->bank_name) == 'Mandiri') selected="selected" @endif>Mandiri
+                                                <option value="HBL"
+                                                    @if (old('bank_name', $customer->bank_name) == 'HBL') selected="selected" @endif>HBL
                                                 </option>
                                             </select>
 

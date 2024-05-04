@@ -59,6 +59,28 @@
                     </a>
                 </th>
                 <th scope="col" class="align-middle text-center">
+                    <a wire:click.prevent="sortBy('orders_count')" href="#" role="button">
+                        {{ __('Order Counts') }}
+                        @include('inclues._sort-icon', ['field' => 'orders_count'])
+                    </a>
+                </th>
+                <th scope="col" class="align-middle text-center">
+                        {{ __('Paid Amount') }}
+                        @include('inclues._sort-icon', ['field' => 'orders_sum_pay'])
+                </th>
+                <th scope="col" class="align-middle text-center">
+                        {{ __('Due Amount') }}
+                        @include('inclues._sort-icon', ['field' => 'orders_sum_due'])
+                </th>
+                <th scope="col" class="align-middle text-center">
+                    {{ __('Total Amount') }}
+                    @include('inclues._sort-icon', ['field' => 'orders_sum_sub_total'])
+            </th>
+            <th scope="col" class="align-middle text-center">
+                {{ __('Extra Amount') }}
+                @include('inclues._sort-icon', ['field' => 'orders_sum_vat'])
+        </th>
+                <th scope="col" class="align-middle text-center">
                     <a wire:click.prevent="sortBy('created_at')" href="#" role="button">
                         {{ __('Created at') }}
                         @include('inclues._sort-icon', ['field' => 'Created_at'])
@@ -82,14 +104,29 @@
                         {{ $customer->email }}
                     </td>
                     <td class="align-middle text-center">
+                        {{ $customer->orders_count }}
+                    </td>
+                    <td class="align-middle text-center">
+                        {{ $customer->orders_sum_pay ?? 0 }}
+                    </td>
+                    <td class="align-middle text-center">
+                        {{ $customer->orders_sum_due ?? 0 }}
+                    </td>
+                    <td class="align-middle text-center">
+                        {{ $customer->orders_sum_sub_total ?? 0 }}
+                    </td>
+                    <td class="align-middle text-center">
+                        {{ $customer->orders_sum_vat ?? 0 }}
+                    </td>
+                    <td class="align-middle text-center">
                         {{ $customer->created_at->diffForHumans() }}
                     </td>
                     <td class="align-middle text-center">
                         <x-button.show class="btn-icon" route="{{ route('customers.show', $customer->uuid) }}"/>
                         <x-button.edit class="btn-icon" route="{{ route('customers.edit', $customer->uuid) }}"/>
-                        <x-button.delete 
-                            class="btn-icon" 
-                            route="{{ route('customers.destroy', $customer->uuid) }}" 
+                        <x-button.delete
+                            class="btn-icon"
+                            route="{{ route('customers.destroy', $customer->uuid) }}"
                             onclick="return confirm('Are you sure to remove {{ $customer->name }} ?')"
                         />
                     </td>
