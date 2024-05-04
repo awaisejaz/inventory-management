@@ -45,7 +45,7 @@ class CategorySeeder extends Seeder
                 'user_id' => 1,
             ],
             [
-                'id'    => 5,
+                'id'    => 6,
                 'name'  => 'Truck Tyre Tube',
                 'slug'  => 'truck_tyre',
                 'user_id' => 1,
