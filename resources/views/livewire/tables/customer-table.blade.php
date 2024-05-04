@@ -76,10 +76,10 @@
                     {{ __('Total Amount') }}
                     @include('inclues._sort-icon', ['field' => 'orders_sum_sub_total'])
             </th>
-            <th scope="col" class="align-middle text-center">
+            {{-- <th scope="col" class="align-middle text-center">
                 {{ __('Extra Amount') }}
                 @include('inclues._sort-icon', ['field' => 'orders_sum_vat'])
-        </th>
+        </th> --}}
                 <th scope="col" class="align-middle text-center">
                     <a wire:click.prevent="sortBy('created_at')" href="#" role="button">
                         {{ __('Created at') }}
@@ -115,9 +115,9 @@
                     <td class="align-middle text-center">
                         {{ $customer->orders_sum_sub_total ?? 0 }}
                     </td>
-                    <td class="align-middle text-center">
+                    {{-- <td class="align-middle text-center">
                         {{ $customer->orders_sum_vat ?? 0 }}
-                    </td>
+                    </td> --}}
                     <td class="align-middle text-center">
                         {{ $customer->created_at->diffForHumans() }}
                     </td>
