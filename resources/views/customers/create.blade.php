@@ -55,7 +55,7 @@
                                     <div class="col-md-12">
                                         <x-input name="name" :required="true"/>
 
-                                        <x-input name="email" label="Email address" :required="true"/>
+                                        <x-input name="email" label="Email address"/>
                                     </div>
 
                                     <div class="col-sm-6 col-md-6">
