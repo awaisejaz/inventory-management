@@ -16,32 +16,38 @@ class CategorySeeder extends Seeder
         $categories = collect([
             [
                 'id'    => 1,
-                'name'  => 'Laptops',
-                'slug'  => 'laptops',
+                'name'  => 'Bike Tyre Tube',
+                'slug'  => 'bike_tyre',
                 'user_id' => 1,
             ],
             [
                 'id'    => 2,
-                'name'  => 'Hardware',
-                'slug'  => 'hardware',
+                'name'  => 'Car Tyre Tube',
+                'slug'  => 'car_tyre',
                 'user_id' => 1,
             ],
             [
                 'id'    => 3,
-                'name'  => 'Smartphones',
-                'slug'  => 'smartphones',
+                'name'  => 'Auto Tyre Tube',
+                'slug'  => 'auto_tyre',
                 'user_id' => 1,
             ],
             [
                 'id'    => 4,
-                'name'  => 'Speakers',
-                'slug'  => 'speakers',
+                'name'  => 'Tractor Tyre Tube',
+                'slug'  => 'tractor_tyre',
                 'user_id' => 1,
             ],
             [
                 'id'    => 5,
-                'name'  => 'Software',
-                'slug'  => 'software',
+                'name'  => 'Trali Tyre Tube',
+                'slug'  => 'trali_tyre',
+                'user_id' => 1,
+            ],
+            [
+                'id'    => 5,
+                'name'  => 'Truck Tyre Tube',
+                'slug'  => 'truck_tyre',
                 'user_id' => 1,
             ]
         ]);
