@@ -27,6 +27,11 @@ class DashboardController extends Controller
         $categories = Category::where("user_id", auth()->id())->count();
         $quotations = Quotation::where("user_id", auth()->id())->count();
 
+        $productStackAmount = Product::sum('selling_price');
+        $dueAmount = Order::sum('due');
+        $saleAmount = Order::sum('total');
+        $receivedAmount = Order::sum('pay');
+
         return view('dashboard', [
             'products' => $products,
             'orders' => $orders,
@@ -36,7 +41,11 @@ class DashboardController extends Controller
             'todayQuotations' => $todayQuotations,
             'todayOrders' => $todayOrders,
             'categories' => $categories,
-            'quotations' => $quotations
+            'quotations' => $quotations,
+            'productStackAmount' => $productStackAmount,
+            'saleAmount' => $saleAmount,
+            'dueAmount' => $dueAmount,
+            'receivedAmount' => $receivedAmount,
         ]);
     }
 }

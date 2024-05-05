@@ -291,6 +291,78 @@
                         </div>
                     </div>
                 </div>
+                <div class="">
+                    <div class="row row-card">
+                        <div class="col-sm-6 col-lg-6">
+                            <div class="card card-sm">
+                                <div class="card-body">
+                                    <div class="row align-items-center">
+                                        <div class="col-auto">
+                                            <span
+                                                class="bg-primary text-white avatar"><!-- Download SVG icon from http://tabler-icons.io/i/currency-dollar -->
+                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                    class="icon icon-tabler icon-tabler-packages" width="24"
+                                                    height="24" viewBox="0 0 24 24" stroke-width="2"
+                                                    stroke="currentColor" fill="none" stroke-linecap="round"
+                                                    stroke-linejoin="round">
+                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                                    <path d="M7 16.5l-5 -3l5 -3l5 3v5.5l-5 3z" />
+                                                    <path d="M2 13.5v5.5l5 3" />
+                                                    <path d="M7 16.545l5 -3.03" />
+                                                    <path d="M17 16.5l-5 -3l5 -3l5 3v5.5l-5 3z" />
+                                                    <path d="M12 19l5 3" />
+                                                    <path d="M17 16.5l5 -3" />
+                                                    <path d="M12 13.5v-5.5l-5 -3l5 -3l5 3v5.5" />
+                                                    <path d="M7 5.03v5.455" />
+                                                    <path d="M12 8l5 -3" />
+                                                </svg>
+                                            </span>
+                                        </div>
+                                        <div class="col">
+                                            <div class="font-weight-medium">
+                                                {{ $productStackAmount }} Total Stake Amount
+                                            </div>
+                                            <div class="text-muted">
+                                                {{ $saleAmount }} Total Sale Amount
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-6">
+                            <div class="card card-sm">
+                                <div class="card-body">
+                                    <div class="row align-items-center">
+                                        <div class="col-auto">
+                                            <span
+                                                class="bg-green text-white avatar"><!-- Download SVG icon from http://tabler-icons.io/i/shopping-cart -->
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24"
+                                                    height="24" viewBox="0 0 24 24" stroke-width="2"
+                                                    stroke="currentColor" fill="none" stroke-linecap="round"
+                                                    stroke-linejoin="round">
+                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                                    <path d="M6 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                                                    <path d="M17 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                                                    <path d="M17 17h-11v-14h-2" />
+                                                    <path d="M6 5l14 1l-1 7h-13" />
+                                                </svg>
+                                            </span>
+                                        </div>
+                                        <div class="col">
+                                            <div class="font-weight-medium">
+                                                {{ $dueAmount }} Due Amount
+                                            </div>
+                                            <div class="text-muted">
+                                                {{ $receivedAmount }} Received Amount
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                 {{-- -
                 <div class="col-lg-6">
