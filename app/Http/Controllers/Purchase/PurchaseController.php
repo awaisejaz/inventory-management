@@ -87,14 +87,15 @@ class PurchaseController extends Controller
                 'length' => 10,
                 'prefix' => 'PRS-'
             ]),
-            'status'     => PurchaseStatus::PENDING->value,
+            'status'     => PurchaseStatus::APPROVED->value,
             'created_by' => auth()->user()->id,
             'supplier_id.required' =>$request->required,
             'supplier_id'   =>$request->supplier_id,
             'date'          =>$request->date,
             'total_amount'  =>$request->total_amount,
             'uuid'=>Str::uuid(),
-            'user_id'=>auth()->id()
+            'user_id'=>auth()->id(),
+            'paid_amount' => $request->paid_amount
         ]);
 
         /*
@@ -123,7 +124,7 @@ class PurchaseController extends Controller
             ->with('success', 'Purchase has been created!');
     }
 
-    public function update($uuid)
+    public function update($uuid, Request $request)
     {
         $purchase =Purchase::where('uuid',$uuid)->firstOrFail();
         $products = PurchaseDetails::where('purchase_id', $purchase->id)->get();
@@ -137,7 +138,8 @@ class PurchaseController extends Controller
         Purchase::findOrFail($purchase->id)
             ->update([
                 'status' => PurchaseStatus::APPROVED,
-                'updated_by' => auth()->user()->id
+                'paid_amount' => $request->paid_amount,
+                'updated_by' => auth()->user()->id,
             ]);
 
         return redirect()

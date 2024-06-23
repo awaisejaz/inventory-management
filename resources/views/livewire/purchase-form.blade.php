@@ -144,6 +144,21 @@
                 </td>
             </tr>
 
+            <tr>
+                <th colspan="4" class="align-middle text-end">
+                    Pay
+                </th>
+                <td width="150" class="align-middle text-center">
+                    <input name="paid_amount" wire:model.blur="paid_amount" type="number" id="paid_amount" class="form-control w-75 d-inline" min="0">
+
+                    @error('paid_amount')
+                    <em class="invalid-feedback">
+                        {{ $message }}
+                    </em>
+                    @enderror
+                </td>
+            </tr>
+
         </tbody>
     </table>
 </div>

@@ -25,7 +25,8 @@ class Purchase extends Model
         'created_by',
         'updated_by',
         "user_id",
-        "uuid"
+        "uuid",
+        "paid_amount"
     ];
 
     protected $casts = [

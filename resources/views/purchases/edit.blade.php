@@ -48,6 +48,25 @@
                         <label class="small mb-1">Total</label>
                         <div class="form-control form-control-solid">{{ $purchase->total_amount }}</div>
                     </div>
+                    <form action="{{ route('purchases.update', $purchase->uuid) }}" method="POST">
+                        @csrf
+                        <input type="hidden" name="id" value="{{ $purchase->id }}">
+
+                        <div class="row gx-3">
+                        <div class="col-md-6">
+                            <label class="small mb-1">Total Paid</label>
+                            <input class="form-control form-control-solid" name="paid_amount" type="number" value="{{$purchase->paid_amount}}">
+                        </div>
+                        <div class="col-md-3 mt-4">
+                            <button type="submit"
+                                    class="btn btn-success"
+                                    onclick="return confirm('Are you sure you want to add amount?')"
+                            >
+                                {{ __('Add Amount') }}
+                            </button>
+                        </div>
+                    </div>
+                    </form>
                 </div>
                 <div class="row gx-3 mb-3">
                     <div class="col-md-6">

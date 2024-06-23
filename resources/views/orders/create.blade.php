@@ -159,7 +159,7 @@
                                         <tr>
                                             <td colspan="4" class="text-end">Tax</td>
                                             <td class="text-center">
-                                                {{ Cart::tax() }}
+                                                {{ 0 }}
                                             </td>
                                         </tr>
                                         <tr>

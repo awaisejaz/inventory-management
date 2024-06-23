@@ -68,6 +68,12 @@
                         </a>
                     </th>
                     <th scope="col" class="align-middle text-center">
+                        <a wire:click.prevent="sortBy('paid_amount')" href="#" role="button">
+                            {{ __('Total Paid') }}
+                            @include('inclues._sort-icon', ['field' => 'paid_amount'])
+                        </a>
+                    </th>
+                    <th scope="col" class="align-middle text-center">
                         <a wire:click.prevent="sortBy('status')" href="#" role="button">
                             {{ __('Status') }}
                             @include('inclues._sort-icon', ['field' => 'status'])
@@ -95,6 +101,10 @@
                     </td>
                     <td class="align-middle text-center">
                         {{ Number::currency($purchase->total_amount, 'PKR') }}
+                    </td>
+
+                    <td class="align-middle text-center">
+                        {{ Number::currency($purchase->paid_amount, 'PKR') }}
                     </td>
 
                     @if ($purchase->status === \App\Enums\PurchaseStatus::APPROVED)

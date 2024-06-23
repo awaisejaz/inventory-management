@@ -68,6 +68,19 @@
                     </a>
                 </th>
                 <th scope="col" class="align-middle text-center">
+                    <a href="#" role="button">
+                        {{ __('total product price') }}
+                        @include('inclues._sort-icon', ['field' => 'total_product_price'])
+                    </a>
+                </th>
+
+                <th scope="col" class="align-middle text-center">
+                    <a href="#" role="button">
+                        {{ __('amount paid') }}
+                        @include('inclues._sort-icon', ['field' => 'amount_paid'])
+                    </a>
+                </th>
+                <th scope="col" class="align-middle text-center">
                     <a wire:click.prevent="sortBy('created_at')" href="#" role="button">
                         {{ __('Created at') }}
                         @include('inclues._sort-icon', ['field' => 'created_at'])
@@ -100,15 +113,25 @@
                     </td>
                     <td class="align-middle text-center">
                         <span class="">
+                            {{ $supplier->purchases_sum_total_amount ?? 0 }}
+                        </span>
+                    </td>
+                    <td class="align-middle text-center">
+                        <span class="">
+                            {{ $supplier->purchases_sum_paid_amount ?? 0 }}
+                        </span>
+                    </td>
+                    <td class="align-middle text-center">
+                        <span class="">
                             {{ $supplier->created_at->diffForHumans() }}
                         </span>
                     </td>
                     <td class="align-middle text-center">
                         <x-button.show class="btn-icon" route="{{ route('suppliers.show', $supplier->uuid) }}"/>
                         <x-button.edit class="btn-icon" route="{{ route('suppliers.edit', $supplier->uuid) }}"/>
-                        <x-button.delete 
-                            class="btn-icon" 
-                            route="{{ route('suppliers.destroy', $supplier->uuid) }}" 
+                        <x-button.delete
+                            class="btn-icon"
+                            route="{{ route('suppliers.destroy', $supplier->uuid) }}"
                             onclick="return confirm('Are you sure to remove supplier {{ $supplier->name }} ?!')"
                         />
                     </td>
